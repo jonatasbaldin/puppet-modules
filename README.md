@@ -1,0 +1,3 @@
+### Puppetmaster
+
+Configuration for puppetmaster
