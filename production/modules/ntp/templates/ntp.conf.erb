@@ -1,0 +1,11 @@
+driftfile /var/lib/ntp/ntp.drift
+
+<% if @server[0] != 'UNSET' -%>
+<% @server.each do |server| -%>
+server <%= server %> prefer
+<% end -%>
+<% end -%>
+server ntp.ubuntu.com
+
+restrict 127.0.0.1
+restrict ::1
