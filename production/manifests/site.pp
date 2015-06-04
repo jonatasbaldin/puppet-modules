@@ -12,6 +12,12 @@ node 'netbook-01.labjonatas.com' {
     $servers => ['10.1.10.7', '10.1.10.8'],
     $domain => 'labjonatas.com',
   }
+
+  class { 'sudoers': }
+  sudoers::conf { 'jonatas': 
+    cont => 'jonatas ALL=(ALL:ALL) NOPASSWD: ALL',
+  }
+
 }
 
 node 'h03.labjonatas.com' {
@@ -22,6 +28,11 @@ node 'h03.labjonatas.com' {
   class { 'dnsconf':
     $servers => ['10.1.10.7', '10.1.10.8'],
     $domain => 'labjonatas.com',
+  }
+
+  class { 'sudoers': }
+  sudoers::conf { 'jonatas':
+    cont => 'jonatas ALL=(ALL:ALL) NOPASSWD: ALL',
   }
 
 }
