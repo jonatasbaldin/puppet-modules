@@ -26,7 +26,6 @@ node 'netbook-01.labjonatas.com' {
   }
   
   class { 'puppetmaster': }
-  class { 'puppetclient': }
 }
 
 node 'h03.labjonatas.com' {
