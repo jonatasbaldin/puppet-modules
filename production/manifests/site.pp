@@ -26,6 +26,7 @@ node 'netbook-01.labjonatas.com' {
   }
   
   class { 'puppetmaster': }
+  class { 'puppetclient': }
 }
 
 node 'h03.labjonatas.com' {
@@ -53,4 +54,6 @@ node 'h03.labjonatas.com' {
     emptypassword => 'no',
     usedns        => 'no',        
   }
+
+  class { 'puppetclient': }
 }
