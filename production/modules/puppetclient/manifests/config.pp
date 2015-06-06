@@ -8,4 +8,12 @@ class puppetclient::config inherits puppetclient {
     mode    => $config_mode,
     content => template($config_template),
   }
+
+  # if Debian-like, enable service
+  if $::osfamily == 'Debian' {
+    file { '/etc/default/puppet':
+      source => 'puppet:///modules/puppetclient/puppet',
+    }
+  }
+
 }
