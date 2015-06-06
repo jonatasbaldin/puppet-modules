@@ -8,6 +8,15 @@ class puppetmaster::install inherits puppetmaster {
     source   => $repo_url,
   }
 
+  # if Debian-like, runs apt-get update
+  if $::osfamily == 'Debian' {
+    exec { 'apt-get-update':
+      command => 'apt-get update -y',
+      path    => '/usr/bin',
+      before  => Package[$package_name],
+    }
+  }
+
   # package
   package { $package_name:
     ensure  => $package_ensure,
