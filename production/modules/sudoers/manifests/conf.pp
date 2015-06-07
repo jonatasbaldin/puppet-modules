@@ -10,7 +10,7 @@ define sudoers::conf (
       owner  => 'root',
       group  => 'root',
       mode   => '0440',
-      validate_cmd => '/sbin/visudo -c -q -f %',
+      #validate_cmd => '/sbin/visudo -c -q -f %',
       source => "puppet:///modules/sudoers/${name}",
     }
   # if not, create a file with some content
@@ -20,7 +20,7 @@ define sudoers::conf (
       owner   => 'root',
       group   => 'root',
       mode    => '0440',
-      validate_cmd => '/sbin/visudo -c -q -f %',
+      #validate_cmd => '/sbin/visudo -c -q -f %',
       content => "${cont}\n",
     }
   }
