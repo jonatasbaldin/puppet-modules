@@ -7,7 +7,7 @@ class ntp ( $server=[ 'UNSET' ] ) {
      }
      'Debian': {
        $service_name = 'ntp'
-     {
+     }
   }
 
   package { 'ntp':
