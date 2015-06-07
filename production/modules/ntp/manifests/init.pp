@@ -1,5 +1,15 @@
 # ntp package
 class ntp ( $server=[ 'UNSET' ] ) {
+
+  case $::osfamily {
+    'RedHat': {
+       $service_name = 'ntpd'
+     }
+     'Debian': {
+       $service_name = 'ntp'
+     {
+  }
+
   package { 'ntp':
     ensure => installed,
   }
@@ -9,7 +19,7 @@ class ntp ( $server=[ 'UNSET' ] ) {
     notify  => Service['ntpd'],
   }
 
-  service { 'ntpd':
+  service { $service_name:
     ensure  => running,
     enable  => true,
     require => [ Package['ntp'], File['/etc/ntp.conf'] ],
