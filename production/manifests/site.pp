@@ -57,7 +57,7 @@ node 'h03.labjonatas.com' {
   class { 'puppetclient': }
 }
 
-node 'rasp-01' {
+node 'rasp-01.labjonatas.com' {
   class { 'ntp':
     server => ['a.ntp.br','b.ntp.br'],
   }
