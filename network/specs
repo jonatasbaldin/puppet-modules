@@ -1,0 +1,22 @@
+# Network module
+
+- Manage global configurations
+  - Default gateway
+
+- Interfaces (/etc/sysconfig/network-scripts/ifcfg-name)
+  - "Normal" interfaces
+  - Bonding
+    - Load bonding module
+  - VLAN
+    - Load 8021q module
+  - Bridge
+  - Alias
+
+- Service
+  - Networking
+
+network
+network::params
+network::global
+network::iface
+network::service
